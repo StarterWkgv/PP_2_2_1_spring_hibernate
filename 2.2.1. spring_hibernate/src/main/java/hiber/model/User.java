@@ -79,13 +79,11 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", car=" + (car == null ? "" : car) +
-                '}';
+        return String.format("Id = %d\n" +
+                "First Name = %s\n" +
+                "Last Name = %s\n" +
+                "Email = %s\n" +
+                "Car = %s\n", id, firstName, lastName, email, car);
     }
 
 }
