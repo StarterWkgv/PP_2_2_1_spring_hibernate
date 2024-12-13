@@ -14,6 +14,8 @@ public class UserServiceImp implements UserService {
 
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private CarService carService;
 
     @Transactional(readOnly = true)
     @Override
@@ -24,6 +26,9 @@ public class UserServiceImp implements UserService {
     @Transactional
     @Override
     public void add(User user) {
+        if (user.getCar() != null){
+            carService.add(user.getCar());
+        }
         userDao.add(user);
     }
 
